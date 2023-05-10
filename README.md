@@ -1,5 +1,5 @@
 # Todo Front End
-licence aqui
+[![NPM](https://img.shields.io/github/license/Sartarelli011/TodoApp)](https://github.com/Sartarelli011/todoApp/blob/main/LICENSE)
 
 ## Sobre o Projeto
 Um projeto basico para mostrar meus conhecimentos em frontend, utilizando o react.
