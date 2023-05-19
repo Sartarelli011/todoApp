@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../context/authContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -10,9 +10,9 @@ function Login() {
   const { signIn, signed } = useContext(AuthContext);
   let navigate = useNavigate();
 
-  if (signed) {
-    navigate("/todo");
-  }
+  useEffect(() => {
+    navigate("/"); // Chame navigate() dentro do useEffect()
+  }, []);
 
   const {
     register,

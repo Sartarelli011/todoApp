@@ -16,7 +16,6 @@ function ListItem({ _id, task, completed }: ItemList) {
       className=" p-3 text-bg-primary rounded d-flex justify-content-center align-items-center mt-2"
       key={_id}
     >
-      {/*  <button className="btn border" type="checkbox"></button> */}
       <input
         className="form-check-input p-2"
         type="checkbox"

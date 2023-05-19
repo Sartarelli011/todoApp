@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 import { api } from "../services/todoApi";
 import { userLogin } from "../services/userApi";
 import {
@@ -30,11 +30,11 @@ function AuthProvider({ children }: ContextProps) {
   const signIn = ({ email, password }: SignInData): void => {
     userLogin({ email, password })
       .then((response) => {
-        const { loginUser, token } = response;
-        setUser({ userId: loginUser, token: token });
+        const { userId, token } = response;
+        setUser({ userId: userId, token: token });
         api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
         localStorage.setItem("@Auth:token", JSON.stringify(token));
-        localStorage.setItem("userId", JSON.stringify(loginUser));
+        localStorage.setItem("userId", JSON.stringify(userId));
       })
       .catch((error) => {
         console.log(error);
